@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import sv.edu.udbvirtual.pawcarecontrollisobackend.Model.UsuarioModel;
 //import sv.edu.udbvirtual.pawcarecontrollisobackend.Model.CitasModel;
-//import sv.edu.udbvirtual.pawcarecontrollisobackend.Model.TipoUsuarioModel;
+import sv.edu.udbvirtual.pawcarecontrollisobackend.Model.TipoUsuarioModel;
 
 import java.util.ArrayList;
 import java.util.Optional;

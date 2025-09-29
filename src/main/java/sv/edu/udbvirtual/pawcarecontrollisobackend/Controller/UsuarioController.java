@@ -6,13 +6,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sv.edu.udbvirtual.pawcarecontrollisobackend.Model.UsuarioModel;
 import sv.edu.udbvirtual.pawcarecontrollisobackend.Servicios.UsuarioServicio;
-
 import java.util.ArrayList;
 import java.util.Optional;
+
 @RestController
 @RequestMapping("Usuario")
 public class UsuarioController {
-
     @Autowired
     UsuarioServicio usuarioServicio;
 
@@ -62,8 +61,7 @@ public class UsuarioController {
 
     /**Actualizar Usuario**/
     @PutMapping("/Update/{id}")
-    public ResponseEntity<UsuarioModel> actualizarUsuario(@PathVariable("id") Long id,
-                                                          @RequestBody UsuarioModel usuario) {
+    public ResponseEntity<UsuarioModel> actualizarUsuario(@PathVariable("id") Long id, @RequestBody UsuarioModel usuario) {
         UsuarioModel usuarioActualizado = usuarioServicio.actualizarUsuario(id, usuario);
         return usuarioActualizado != null ?
                 new ResponseEntity<>(usuarioActualizado, HttpStatus.OK) :
