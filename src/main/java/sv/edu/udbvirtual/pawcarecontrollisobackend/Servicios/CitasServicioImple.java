@@ -21,7 +21,7 @@ public class CitasServicioImple implements CitasServicio {
 
     @Override
     public ArrayList<CitasModel> findAllCitasByDoctor(Long id,Long idE) {
-        return  citaRepositorio.findAllCitasBy_Doctor(id/* ,idE*/);
+        return  citaRepositorio.findAllCitasBy_Doctor(id ,idE);
     }
 
     @Override
@@ -52,8 +52,8 @@ public class CitasServicioImple implements CitasServicio {
             citaExistente.setFecha(cita.getFecha());
             citaExistente.setHora(cita.getHora());
             citaExistente.setUsuario(cita.getUsuario());
-            //citaExistente.setPaciente(cita.getPaciente());
-            //citaExistente.setEstadoCita(cita.getEstadoCita());
+            citaExistente.setPaciente(cita.getPaciente());
+            citaExistente.setEstadoCita(cita.getEstadoCita());
             // Actualiza otros campos según sea necesario
             return citaRepositorio.save(citaExistente);
         }
