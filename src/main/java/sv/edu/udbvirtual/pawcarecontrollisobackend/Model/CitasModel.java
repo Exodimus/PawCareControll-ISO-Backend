@@ -24,13 +24,13 @@ public class CitasModel {
     @JoinColumn(name = "id_Usuario")
     private UsuarioModel usuario;
 
-    /*@ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_Paciente_Mascota")
     private Paciente_MascotaModel paciente;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_Estado_Cita ")
-    private EstadoCitasModel estadoCita;*/
+    private EstadoCitasModel estadoCita;
 
 //-----------------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------CONSTRUCTORES----------------------------------------------------------------
@@ -43,14 +43,14 @@ public class CitasModel {
         this.id = id;
     }
 
-    public CitasModel(Long id, Date fecha, Time hora, Long estatus, UsuarioModel usuario/*, Paciente_MascotaModel paciente, EstadoCitasModel estadoCita*/) {
+    public CitasModel(Long id, Date fecha, Time hora, Long estatus, UsuarioModel usuario, Paciente_MascotaModel paciente, EstadoCitasModel estadoCita) {
         this.id = id;
         this.fecha = fecha;
         this.hora = hora;
         Estatus = estatus;
         this.usuario = usuario;
-        //this.paciente = paciente;
-        //this.estadoCita = estadoCita;
+        this.paciente = paciente;
+        this.estadoCita = estadoCita;
     }
 
 //-----------------------------------------------------------------------------------------------------------------------------
@@ -97,7 +97,7 @@ public class CitasModel {
         this.usuario = usuario;
     }
 
-    /*public Paciente_MascotaModel getPaciente() {
+    public Paciente_MascotaModel getPaciente() {
         return paciente;
     }
 
@@ -111,5 +111,5 @@ public class CitasModel {
 
     public void setEstadoCita(EstadoCitasModel estadoCita) {
         this.estadoCita = estadoCita;
-    }*/
+    }
 }
